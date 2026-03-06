@@ -79,6 +79,26 @@
 
         .wave-number:hover { color: #8b7355; }
 
+        /* Gentle line animation on hover - top right of the point */
+        .wave-number::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 20%;
+            transform: translateX(10px);
+            width: 24px;
+            height: 1px;
+            background: linear-gradient(90deg, #8b7355, transparent);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        .wave-number:hover::after {
+            opacity: 0.5;
+            transform: translateX(0);
+        }
+
         .wave-number.active {
             color: #fafafa;
             transform: translateX(10px);
@@ -1130,7 +1150,7 @@
                 </div>
                 <div class="md:col-span-5 hidden md:block">
                     <div class="relative image-container border border-zinc-800 skew-on-scroll" style="aspect-ratio: 4/5;">
-                        <img src="assets/images/hero.jpg" alt="André Sadaune" class="w-full h-full object-cover" style="filter: grayscale(100%) contrast(1.05);">
+                        <img src="hero.jpg" alt="André Sadaune" class="w-full h-full object-cover" style="filter: grayscale(100%) contrast(1.05);">
                         <div class="absolute inset-0 bottom-0 p-4 bg-gradient-to-t from-[#0a0a0b] via-transparent to-transparent flex items-end z-10">
                             <span class="text-[10px] text-zinc-500 uppercase tracking-wider">Head of Revenue, QuantPi</span>
                         </div>
@@ -1140,7 +1160,7 @@
 
             <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-zinc-900 border border-zinc-900 reveal-up" style="transition-delay: 0.5s">
                 <div class="bg-[#0a0a0b] p-6 md:p-8 group hover:bg-zinc-900/30 transition-colors relative">
-                    <div class="mb-4"><img src="assets/images/logo-quantpi.png" alt="QuantPi" class="h-6 logo-white"></div>
+                    <div class="mb-4"><img src="logo-quantpi.png" alt="QuantPi" class="h-6 logo-white"></div>
                     <div class="text-3xl md:text-4xl font-serif mb-1 counter text-bronze" data-target="463" data-suffix="%">0%</div>
                     <div class="text-[10px] uppercase tracking-wider text-zinc-600">Revenue growth Y1</div>
                 </div>
@@ -1157,12 +1177,12 @@
                     <div class="text-[10px] uppercase tracking-wider text-zinc-600">ARR 1.2→6.8M (24mo)</div>
                 </div>
                 <div class="bg-[#0a0a0b] p-6 md:p-8 group hover:bg-zinc-900/30 transition-colors relative">
-                    <div class="mb-4"><img src="assets/images/logo-uipath.png" alt="UiPath" class="h-5 logo-white"></div>
+                    <div class="mb-4"><img src="logo-uipath.png" alt="UiPath" class="h-5 logo-white"></div>
                     <div class="text-3xl md:text-4xl font-serif mb-1 counter text-bronze" data-target="100" data-suffix="%">0%</div>
                     <div class="text-[10px] uppercase tracking-wider text-zinc-600">YoY AI sales growth</div>
                 </div>
                 <div class="bg-[#0a0a0b] p-6 md:p-8 group hover:bg-zinc-900/30 transition-colors relative">
-                    <div class="mb-4"><img src="assets/images/logo-sap.png" alt="SAP" class="h-6 logo-white"></div>
+                    <div class="mb-4"><img src="logo-sap.png" alt="SAP" class="h-6 logo-white"></div>
                     <div class="text-3xl md:text-4xl font-serif mb-1"><span class="counter text-zinc-200" data-target="120" data-prefix="€" data-suffix="M+">€0M</span></div>
                     <div class="text-[10px] uppercase tracking-wider text-zinc-600">Largest deal in DACH (2020)</div>
                 </div>
@@ -1207,12 +1227,12 @@
                             <div class="flip-card-front md:col-span-12 grid md:grid-cols-12 gap-0 items-stretch bg-[#0c0b0a]">
                                 <div class="md:col-span-5 relative z-0">
                                     <div class="aspect-[4/3] md:aspect-auto md:h-full image-container bg-[#151412]">
-                                        <img src="assets/images/wave1-enterprise.jpg" alt="Enterprise Foundation" class="w-full h-full object-cover image-grayscale" loading="lazy">
+                                        <img src="wave1-enterprise.jpg" alt="Enterprise Foundation" class="w-full h-full object-cover image-grayscale" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="md:col-span-7 p-8 md:p-12 flex flex-col justify-center relative z-10 border-l border-[#2a2927]">
                                     <div class="flex items-center gap-4 mb-4 relative z-20">
-                                        <img src="assets/images/logo-sap.png" alt="SAP" class="h-7 logo-white" loading="lazy">
+                                        <img src="logo-sap.png" alt="SAP" class="h-7 logo-white" loading="lazy">
                                         <span class="text-[10px] text-[#5c5854] font-mono">2016—2021</span>
                                     </div>
                                     <div class="text-[10px] uppercase tracking-wider text-[#6b6864] mb-4 relative z-20">Industry Account Executive & Customer Value Sales</div>
@@ -1259,7 +1279,7 @@
                                         <!-- Header -->
                                         <div class="flex items-center justify-between mb-6 border-b border-[#2a2927] pb-4">
                                             <div class="flex items-center gap-3">
-                                                <img src="assets/images/logo-sap.png" alt="SAP" class="h-8 opacity-90 filter brightness-0 invert">
+                                                <img src="logo-sap.png" alt="SAP" class="h-8 opacity-90 filter brightness-0 invert">
                                                 <div>
                                                     <div class="font-serif text-lg text-[#fafafa]">Enterprise Foundation</div>
                                                     <div class="text-[0.7rem] text-[#6b6864] mt-0.5">SAP • KonceptS</div>
@@ -1392,13 +1412,13 @@
                                         <div class="text-[10px] uppercase tracking-wider text-[#6b6864] mb-3">Lighthouse Wins</div>
                                         <div class="grid grid-cols-3 gap-2">
                                             <div class="logo-item">
-                                                <img src="assets/images/logo-allianz.png" alt="Allianz">
+                                                <img src="logo-allianz.png" alt="Allianz">
                                             </div>
                                             <div class="logo-item">
-                                                <img src="assets/images/logo-dhl.png" alt="DHL">
+                                                <img src="logo-dhl.png" alt="DHL">
                                             </div>
                                             <div class="logo-item">
-                                                <img src="assets/images/logo-schaeffler.png" alt="Schaeffler">
+                                                <img src="logo-schaeffler.png" alt="Schaeffler">
                                             </div>
                                         </div>
                                     </div>
@@ -1417,7 +1437,7 @@
                                 </div>
                                 <div class="md:col-span-5 relative z-0 md:order-2 order-1">
                                     <div class="aspect-[4/3] md:aspect-auto md:h-full image-container bg-[#151412]">
-                                        <img src="assets/images/wave2-ml.jpg" alt="Machine Learning" class="w-full h-full object-cover image-grayscale" loading="lazy">
+                                        <img src="wave2-ml.jpg" alt="Machine Learning" class="w-full h-full object-cover image-grayscale" loading="lazy">
                                     </div>
                                 </div>
                             </div>
@@ -1532,12 +1552,12 @@
                             <div class="flip-card-front md:col-span-12 grid md:grid-cols-12 gap-0 items-stretch bg-[#0c0b0a]">
                                 <div class="md:col-span-5 relative z-0">
                                     <div class="aspect-[4/3] md:aspect-auto md:h-full image-container bg-[#151412]">
-                                        <img src="assets/images/wave3-automation.jpg" alt="Automation" class="w-full h-full object-cover image-grayscale" loading="lazy">
+                                        <img src="wave3-automation.jpg" alt="Automation" class="w-full h-full object-cover image-grayscale" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="md:col-span-7 p-8 md:p-12 flex flex-col justify-center relative z-10 border-l border-[#2a2927]">
                                     <div class="flex items-center gap-4 mb-4 relative z-20">
-                                        <img src="assets/images/logo-uipath.png" alt="UiPath" class="h-6 logo-white" loading="lazy">
+                                        <img src="logo-uipath.png" alt="UiPath" class="h-6 logo-white" loading="lazy">
                                         <span class="text-[10px] text-[#5c5854] font-mono">2023—2025</span>
                                     </div>
                                     <div class="text-[10px] uppercase tracking-wider text-[#6b6864] mb-4 relative z-20">AI Sales Leader, Central Europe</div>
@@ -1585,19 +1605,19 @@
                                         <div class="text-[10px] uppercase tracking-wider text-[#6b6864] mb-3">Lighthouse Wins</div>
                                         <div class="grid grid-cols-5 gap-2">
                                             <div class="logo-item">
-                                                <img src="assets/images/logo-ubs.png" alt="UBS">
+                                                <img src="logo-ubs.png" alt="UBS">
                                             </div>
                                             <div class="logo-item">
-                                                <img src="assets/images/logo-dhl.png" alt="DHL">
+                                                <img src="logo-dhl.png" alt="DHL">
                                             </div>
                                             <div class="logo-item">
-                                                <img src="assets/images/logo-vw.png" alt="VW">
+                                                <img src="logo-vw.png" alt="VW">
                                             </div>
                                             <div class="logo-item">
-                                                <img src="assets/images/logo-tui.png" alt="TUI">
+                                                <img src="logo-tui.png" alt="TUI">
                                             </div>
                                             <div class="logo-item">
-                                                <img src="assets/images/logo-adidas.png" alt="Adidas">
+                                                <img src="logo-adidas.png" alt="Adidas">
                                             </div>
                                         </div>
                                     </div>
@@ -1623,7 +1643,7 @@
                                         <!-- Header -->
                                         <div class="flex items-center justify-between mb-6 border-b border-[#2a2927] pb-4">
                                             <div class="flex items-center gap-3">
-                                                <img src="assets/images/logo-uipath.png" alt="UiPath" class="h-7 opacity-90 filter brightness-0 invert">
+                                                <img src="logo-uipath.png" alt="UiPath" class="h-7 opacity-90 filter brightness-0 invert">
                                                 <div>
                                                     <div class="font-serif text-lg text-[#fafafa]">Intelligent Automation</div>
                                                     <div class="text-[0.7rem] text-[#6b6864] mt-0.5">AI Sales Leadership</div>
@@ -1698,19 +1718,19 @@
                                             <!-- Updated to grid layout like Wave 4 -->
                                             <div class="grid grid-cols-5 gap-2">
                                                 <div class="logo-item">
-                                                    <img src="assets/images/logo-ubs.png" alt="UBS">
+                                                    <img src="logo-ubs.png" alt="UBS">
                                                 </div>
                                                 <div class="logo-item">
-                                                    <img src="assets/images/logo-dhl.png" alt="DHL">
+                                                    <img src="logo-dhl.png" alt="DHL">
                                                 </div>
                                                 <div class="logo-item">
-                                                    <img src="assets/images/logo-vw.png" alt="VW">
+                                                    <img src="logo-vw.png" alt="VW">
                                                 </div>
                                                 <div class="logo-item">
-                                                    <img src="assets/images/logo-tui.png" alt="TUI">
+                                                    <img src="logo-tui.png" alt="TUI">
                                                 </div>
                                                 <div class="logo-item">
-                                                    <img src="assets/images/logo-adidas.png" alt="Adidas">
+                                                    <img src="logo-adidas.png" alt="Adidas">
                                                 </div>
                                             </div>
                                         </div>
@@ -1729,7 +1749,7 @@
                             <div class="flip-card-front md:col-span-12 grid md:grid-cols-12 gap-0 items-stretch bg-[#0c0b0a]/50">
                                 <div class="md:col-span-7 p-8 md:p-12 flex flex-col justify-center relative z-10 border-r border-[#2a2927] md:order-1 order-2">
                                     <div class="flex items-center gap-4 mb-4 relative z-20">
-                                        <img src="assets/images/logo-quantpi.png" alt="QuantPi" class="h-7 logo-white" loading="lazy">
+                                        <img src="logo-quantpi.png" alt="QuantPi" class="h-7 logo-white" loading="lazy">
                                         <span class="current-indicator">Current • since Feb 2025</span>
                                     </div>
                                     <div class="text-[10px] uppercase tracking-wider text-[#6b6864] mb-4 relative z-20">Head of Revenue</div>
@@ -1757,20 +1777,20 @@
                                         <div>
                                             <div class="text-[9px] uppercase tracking-wider text-[#6b6864] mb-2">Strategic Partners and Lighthouse Clients</div>
                                             <div class="grid grid-cols-4 gap-2">
-                                                <div class="logo-item"><img src="assets/images/logo-nvidia.png" alt="NVIDIA"></div>
-                                                <div class="logo-item"><img src="assets/images/logo-hpe.png" alt="HPE"></div>
-                                                <div class="logo-item"><img src="assets/images/logo-allianz.png" alt="Allianz"></div>
-                                                <div class="logo-item"><img src="assets/images/logo-mercedes.gif" alt="Mercedes"></div>
+                                                <div class="logo-item"><img src="logo-nvidia.png" alt="NVIDIA"></div>
+                                                <div class="logo-item"><img src="logo-hpe.png" alt="HPE"></div>
+                                                <div class="logo-item"><img src="logo-allianz.png" alt="Allianz"></div>
+                                                <div class="logo-item"><img src="logo-mercedes.gif" alt="Mercedes"></div>
                                             </div>
                                         </div>
 
                                         <div>
                                             <div class="text-[9px] uppercase tracking-wider text-[#6b6864] mb-2">Consulting & Delivery</div>
                                             <div class="grid grid-cols-4 gap-2">
-                                                <div class="logo-item"><img src="assets/images/logo-ey.png" alt="EY"></div>
-                                                <div class="logo-item"><img src="assets/images/logo-deloitte.png" alt="Deloitte"></div>
-                                                <div class="logo-item"><img src="assets/images/logo-bearingpoint.png" alt="BearingPoint"></div>
-                                                <div class="logo-item"><img src="assets/images/logo-mhp.webp" alt="MHP"></div>
+                                                <div class="logo-item"><img src="logo-ey.png" alt="EY"></div>
+                                                <div class="logo-item"><img src="logo-deloitte.png" alt="Deloitte"></div>
+                                                <div class="logo-item"><img src="logo-bearingpoint.png" alt="BearingPoint"></div>
+                                                <div class="logo-item"><img src="logo-mhp.webp" alt="MHP"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1783,7 +1803,7 @@
                                 </div>
                                 <div class="md:col-span-5 relative z-0 md:order-2 order-1">
                                     <div class="aspect-[4/3] md:aspect-auto md:h-full image-container bg-[#151412] relative">
-                                        <img src="assets/images/wave4-ai-trust.jpg" alt="AI Trust" class="w-full h-full object-cover image-grayscale" loading="lazy">
+                                        <img src="wave4-ai-trust.jpg" alt="AI Trust" class="w-full h-full object-cover image-grayscale" loading="lazy">
                                         <div class="absolute bottom-8 right-8 text-right z-10">
                                             <div class="font-serif text-5xl text-white mb-1 counter text-bronze" data-target="463" data-suffix="%">0%</div>
                                             <div class="text-[10px] uppercase tracking-wider text-[#9f9a94]">Growth</div>
@@ -1799,7 +1819,7 @@
                                         <!-- Header -->
                                         <div class="flex items-center justify-between mb-6 border-b border-[#2a2927] pb-4">
                                             <div class="flex items-center gap-3">
-                                                <img src="assets/images/logo-quantpi.png" alt="QuantPi" class="h-8 opacity-90 filter brightness-0 invert">
+                                                <img src="logo-quantpi.png" alt="QuantPi" class="h-8 opacity-90 filter brightness-0 invert">
                                                 <div>
                                                     <div class="font-serif text-lg text-[#fafafa]">AI Trust & Safety</div>
                                                     <div class="text-[0.7rem] text-[#6b6864] mt-0.5">Global Leading AI Testing Platform</div>
@@ -2410,10 +2430,10 @@
         let cursorVisible = false;
 
         const companyLogos = {
-            'sap': 'assets/images/logo-sap.png',
+            'sap': 'logo-sap.png',
             'datarobot': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iOCIgeT0iMTIiIHdpZHRoPSIzMiIgaGVpZ2h0PSI0IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSI4IiB5PSIyMiIgd2lkdGg9IjI0IiBoZWlnaHQ9IjQiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjgiIHk9IjMyIiB3aWR0aD0iMjgiIGhlaWdodD0iNCIgZmlsbD0id2hpdGUiLz4KPC9zdmc+',
-            'uipath': 'assets/images/logo-uipath.png',
-            'quantpi': 'assets/images/logo-quantpi.png'
+            'uipath': 'logo-uipath.png',
+            'quantpi': 'logo-quantpi.png'
         };
 
         document.querySelectorAll('.flip-card').forEach(card => {
